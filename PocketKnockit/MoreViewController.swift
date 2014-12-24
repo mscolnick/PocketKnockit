@@ -12,10 +12,17 @@ class MoreViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var tableView: UITableView!
     
+    //TODO: Make this PList
     var items:NSDictionary = [
         "Spread The Word": ["Share", "Rate PocketKnockit", "Like us on Facebook", "Follow us on Twitter", "Follow us on Instagram"],
         "Settings": ["View Graph", "Vibrate Feedback", "Enable PocketKnockit", "Logout of Facebook"],
         "Other Stuff": ["Terms and Conditions", "Privacy Policy", "Rules"]]
+    
+    var links:[String:String] = [
+        "Rate PocketKnockit": "https://itunes.com",
+        "Like us on Facebook": "https://facebook.com",
+        "Follow us on Twitter": "https://twitter.com",
+        "Follow us on Instagram": "https://instagram.com"]
     
     var sectionTitles:NSArray = []
     
@@ -58,6 +65,32 @@ class MoreViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell?.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell!
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var sectionItems:NSArray = self.items.objectForKey(self.sectionTitles.objectAtIndex(indexPath.section)) as NSArray
+        var item:NSString = sectionItems.objectAtIndex(indexPath.row) as NSString
+        
+        if var link:NSString = self.links[item]{
+            println("Valid Link")
+            var url = NSURL(string: link)
+            UIApplication.sharedApplication().openURL(url!)
+        }
+        
+        if(item == "Share"){
+            println("Sharing")
+            var string:NSString = "Checkout PocketKnockit! Download Here:"
+            var url:NSURL = NSURL(string: "https://www.google.com/search?q=pocketknockit")!
+            
+            var activityViewController:UIActivityViewController = UIActivityViewController(activityItems: [string,url], applicationActivities: nil)
+            
+            self.presentViewController(activityViewController, animated: true, completion: nil)
+        }
+        
+        println("No Link")
+        
+        // so cell wont stay highlighted
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
 }
