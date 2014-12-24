@@ -26,8 +26,8 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         tableView.tableFooterView = UIView(frame: CGRectZero)
-        var CellIdentifier:NSString = "Cell"
-        var cell:ContactTableViewCell? = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as? ContactTableViewCell
+        var CellIdentifier:NSString = "ContactCell"
+        var cell:ContactTableViewCell? = self.tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as? ContactTableViewCell
         
         if (cell == nil) {
             cell = ContactTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: CellIdentifier)

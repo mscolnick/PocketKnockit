@@ -69,6 +69,7 @@ class HomeViewController: UIViewController {
 //        AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker, error: sessionError)
 //        self.playSound()
         
+        
         println("Finished View Did Load")
     }
     

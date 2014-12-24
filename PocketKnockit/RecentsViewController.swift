@@ -33,10 +33,11 @@ class RecentsViewController: UIViewController, UITableViewDataSource, UITableVie
         
         tableView.tableFooterView = UIView(frame: CGRectZero)
         // IF ERROR CHECK HERE
-        var cell:UITableViewCell? = self.tableView.dequeueReusableCellWithIdentifier("Cell") as? UITableViewCell
+        var CellIdentifier:NSString = "NotificationCell"
+        var cell:UITableViewCell? = self.tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as? UITableViewCell
 
         if (cell == nil) {
-            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: CellIdentifier)
         }
         
         var obj:PFObject?

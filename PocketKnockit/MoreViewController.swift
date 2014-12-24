@@ -14,7 +14,7 @@ class MoreViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var items:NSDictionary = [
         "Spread The Word": ["Share", "Rate PocketKnockit", "Like us on Facebook", "Follow us on Twitter", "Follow us on Instagram"],
-        "Settings": ["View Graph", "Vibrate Feedback", "Enable PocketKnockit"],
+        "Settings": ["View Graph", "Vibrate Feedback", "Enable PocketKnockit", "Logout of Facebook"],
         "Other Stuff": ["Terms and Conditions", "Privacy Policy", "Rules"]]
     
     var sectionTitles:NSArray = []
@@ -44,11 +44,11 @@ class MoreViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
-        var cell:UITableViewCell? = self.tableView.dequeueReusableCellWithIdentifier("MoreCell") as? UITableViewCell
+        var CellIdentifier:NSString = "MoreCell"
+        var cell:UITableViewCell? = self.tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as? UITableViewCell
         
         if (cell == nil) {
-            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "MoreCell")
+            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: CellIdentifier)
         }
         
         // Configure the cell...
