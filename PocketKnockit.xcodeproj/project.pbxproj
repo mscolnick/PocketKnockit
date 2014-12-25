@@ -31,6 +31,7 @@
 		F3B62CC11A48F2B40029E303 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B62CC01A48F2B40029E303 /* HomeViewController.swift */; };
 		F3B62CC71A49495C0029E303 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B62CC61A49495C0029E303 /* ContactsViewController.swift */; };
 		F3B62CC91A494E810029E303 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B62CC81A494E810029E303 /* ContactTableViewCell.swift */; };
+		F3EABAFB1A4BCE7400BCB5A5 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EABAFA1A4BCE7400BCB5A5 /* AddFriendViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		F3B62CC31A493CAB0029E303 /* PocketKnockit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketKnockit-Bridging-Header.h"; sourceTree = "<group>"; };
 		F3B62CC61A49495C0029E303 /* ContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		F3B62CC81A494E810029E303 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		F3EABAFA1A4BCE7400BCB5A5 /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				F3B62CA01A48F2040029E303 /* FirstViewController.swift */,
 				F3B62CC01A48F2B40029E303 /* HomeViewController.swift */,
 				F3B62CA41A48F2040029E303 /* Main.storyboard */,
+				F3EABAFA1A4BCE7400BCB5A5 /* AddFriendViewController.swift */,
 				F39CB0AA1A4A732500DB7F4A /* MoreViewController.swift */,
 				F3B62CC61A49495C0029E303 /* ContactsViewController.swift */,
 				F39CB0A81A4A430B00DB7F4A /* RecentsViewController.swift */,
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3EABAFB1A4BCE7400BCB5A5 /* AddFriendViewController.swift in Sources */,
 				F39CB0AB1A4A732500DB7F4A /* MoreViewController.swift in Sources */,
 				F3B62CC91A494E810029E303 /* ContactTableViewCell.swift in Sources */,
 				F3B62C9F1A48F2040029E303 /* AppDelegate.swift in Sources */,
