@@ -45,6 +45,27 @@ class MoreViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return self.sectionTitles.objectAtIndex(section) as? String
     }
     
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 65.0
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var view:UIView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 65.0))
+        view.backgroundColor = UIColor.grayColor()
+        
+        var label: UILabel = UILabel(frame: CGRectMake(10, 30, tableView.frame.size.width, 25.0))
+        label.backgroundColor = UIColor.clearColor()
+        label.textColor = UIColor.cyanColor()
+        label.font = UIFont(name: "Avenir", size: 22.0)
+        
+        var sectionTitle: NSString = self.tableView(tableView, titleForHeaderInSection: section)!
+        label.text = sectionTitle
+        
+        view.addSubview(label)
+        
+        return view
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var sectionItems:NSArray = self.items.objectForKey(self.sectionTitles.objectAtIndex(section)) as NSArray
         return sectionItems.count
@@ -92,5 +113,6 @@ class MoreViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // so cell wont stay highlighted
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+    
     
 }
