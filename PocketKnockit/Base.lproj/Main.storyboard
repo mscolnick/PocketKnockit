@@ -32,16 +32,21 @@
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <offsetWrapper key="textShadowOffset" horizontal="1" vertical="1"/>
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Home" id="Bua-5S-8xX"/>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" id="Zs1-f2-BrP">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.910890020718232" green="0.910890020718232" blue="0.910890020718232" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.25490197539999998" green="0.79215687509999999" blue="0.96470588450000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="talkTabBar" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="defaultMessage" destination="rdN-Vz-CD2" id="b9I-9A-20v"/>
                     </connections>
@@ -65,7 +70,7 @@
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <offsetWrapper key="textShadowOffset" horizontal="1" vertical="1"/>
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="More" id="MMA-vk-oGe"/>
@@ -79,17 +84,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="194"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1ds-4D-PtX">
-                                            <rect key="frame" x="86" y="15" width="148" height="130"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wqc-O4-754">
-                                            <rect key="frame" x="64" y="153" width="193" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Wqc-O4-754">
+                                            <rect key="frame" x="64" y="153" width="193" height="25"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" id="1ds-4D-PtX">
+                                            <rect key="frame" x="64" y="15" width="193" height="130"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
@@ -118,7 +123,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.25490197539999998" green="0.79215687509999999" blue="0.96470588450000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="More" image="second" id="vMg-AY-9KF"/>
+                    <tabBarItem key="tabBarItem" title="More" image="dotdotdotTabBar" id="vMg-AY-9KF"/>
                     <connections>
                         <outlet property="tableView" destination="efc-SY-Qiu" id="K6f-tb-mCc"/>
                     </connections>
@@ -201,7 +206,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.25490197539999998" green="0.79215687509999999" blue="0.96470588450000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Recents" image="first" id="jTE-H1-Efh"/>
+                    <tabBarItem key="tabBarItem" title="Recents" image="recentsTabBar" id="jTE-H1-Efh"/>
                     <connections>
                         <outlet property="segControl" destination="4V5-Qx-FXz" id="XeT-Os-2Td"/>
                         <outlet property="tableView" destination="0rU-9z-r1B" id="kr1-Au-F96"/>
@@ -226,7 +231,7 @@
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <offsetWrapper key="textShadowOffset" horizontal="1" vertical="1"/>
+                                    <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Contacts" id="tOz-Q8-041">
@@ -256,7 +261,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" id="KNQ-xa-Tux">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="KNQ-xa-Tux">
                                                     <rect key="frame" x="230" y="8" width="36" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -280,7 +285,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.25490197539999998" green="0.79215687509999999" blue="0.96470588450000005" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Friends" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="usersTabBar" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="tableView" destination="3nB-IF-rhg" id="fe2-is-ign"/>
                     </connections>
@@ -427,13 +432,29 @@
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+                <navigationBar contentMode="scaleToFill" translucent="NO" id="k2i-TY-DRP">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="barTintColor" red="0.25490197539999998" green="0.79215687509999999" blue="0.96470588450000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <textAttributes key="titleTextAttributes">
+                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                    </textAttributes>
+                    <items>
+                        <navigationItem title="More" id="MVS-1s-sbk"/>
+                    </items>
+                </navigationBar>
             </objects>
             <point key="canvasLocation" x="-203" y="1147"/>
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="dotdotdotTabBar" width="50" height="34"/>
+        <image name="recentsTabBar" width="50" height="34"/>
+        <image name="talkTabBar" width="50" height="34"/>
+        <image name="user" width="256" height="173"/>
+        <image name="usersTabBar" width="50" height="34"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
