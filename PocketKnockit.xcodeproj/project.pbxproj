@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F352DB681A4F9C8000F70099 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F352DB671A4F9C8000F70099 /* MoreTableViewController.swift */; };
 		F39CB0A91A4A430B00DB7F4A /* RecentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39CB0A81A4A430B00DB7F4A /* RecentsViewController.swift */; };
 		F39CB0AB1A4A732500DB7F4A /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39CB0AA1A4A732500DB7F4A /* MoreViewController.swift */; };
 		F39CB0AD1A4A846900DB7F4A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39CB0AC1A4A846900DB7F4A /* AudioToolbox.framework */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F352DB671A4F9C8000F70099 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		F39CB0A81A4A430B00DB7F4A /* RecentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentsViewController.swift; sourceTree = "<group>"; };
 		F39CB0AA1A4A732500DB7F4A /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		F39CB0AC1A4A846900DB7F4A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -149,6 +151,7 @@
 				F3B62CA41A48F2040029E303 /* Main.storyboard */,
 				F3EABAFA1A4BCE7400BCB5A5 /* AddFriendViewController.swift */,
 				F39CB0AA1A4A732500DB7F4A /* MoreViewController.swift */,
+				F352DB671A4F9C8000F70099 /* MoreTableViewController.swift */,
 				F3B62CC61A49495C0029E303 /* ContactsViewController.swift */,
 				F39CB0A81A4A430B00DB7F4A /* RecentsViewController.swift */,
 				F3B62CC81A494E810029E303 /* ContactTableViewCell.swift */,
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3EABAFB1A4BCE7400BCB5A5 /* AddFriendViewController.swift in Sources */,
+				F352DB681A4F9C8000F70099 /* MoreTableViewController.swift in Sources */,
 				F39CB0AB1A4A732500DB7F4A /* MoreViewController.swift in Sources */,
 				F3B62CC91A494E810029E303 /* ContactTableViewCell.swift in Sources */,
 				F3B62C9F1A48F2040029E303 /* AppDelegate.swift in Sources */,
