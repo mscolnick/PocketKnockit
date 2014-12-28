@@ -19,10 +19,10 @@ class MoreTableViewController: UITableViewController {
     @IBOutlet weak var vibrationFeedbackLabel: UILabel!
     
     var links:[String:String] = [
-        "Rate PocketKnockit": "https://itunes.com",
-        "Like us on Facebook": "https://facebook.com",
-        "Follow us on Twitter": "https://twitter.com",
-        "Follow us on Instagram": "https://instagram.com"]
+        "Rate": "https://itunes.com",
+        "Facebook": "https://facebook.com",
+        "Twitter": "https://twitter.com",
+        "Instagram": "https://instagram.com"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,17 +50,18 @@ class MoreTableViewController: UITableViewController {
         
         var identifier:NSString? = tableView.cellForRowAtIndexPath(indexPath)?.reuseIdentifier
         
-//        switch(identifier){
-//            case("Share"):
-//                println("Sharing")
-//            case
-//        }
+        if(identifier == nil){
+            println("Error: No identifier")
+            // so cell wont stay highlighted
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            return
+        }
+        println(identifier)
         
         if var link:NSString = self.links[identifier!]{
             println("Valid Link")
             self.goToLink(link)
         }
-        
         
         if(identifier == "Share"){
             println("Sharing")

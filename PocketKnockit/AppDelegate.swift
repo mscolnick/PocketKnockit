@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Parse.setApplicationId("HlUyWP8XIpZXuiA78zmJNjv4bBRyeWCMccKQzU1e", clientKey: "UB4sqUzJB4BvP2GNb4brpWd3VP9ahv9NPZfSxW7k")
+       PFFacebookUtils.initializeFacebook()
         //TODO - Refactor: [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
         
         
@@ -42,6 +43,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        FBAppCall.handleDidBecomeActiveWithSession(PFFacebookUtils.session())
+        /////
+
     }
 
     func applicationWillTerminate(application: UIApplication) {
@@ -62,7 +66,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         PFPush.handlePush(userInfo)
     }
-
+    
+    func application(application: UIApplication,
+        openURL url: NSURL,
+        sourceApplication: String,
+        annotation: AnyObject?) -> Bool {
+            return FBAppCall.handleOpenURL(url, sourceApplication:sourceApplication,
+                withSession:PFFacebookUtils.session())
+            /////////
+    }
+    
+    
 
 }
 
