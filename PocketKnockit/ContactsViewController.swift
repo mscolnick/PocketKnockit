@@ -36,11 +36,11 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         var obj:PFObject = self.friendsArray.objectAtIndex(indexPath.row) as PFObject
         var cellText:NSString = obj["displayName"] as NSString
-        cell?.textLabel.text = cellText
+        cell?.textLabel?.text = cellText
         if let profileUrlString: NSString = obj["profilePictureURL"] as? NSString{
             var url:NSURL = NSURL(string: profileUrlString)!
             var imageData:NSData = NSData(contentsOfURL: url)!
-            cell?.imageView.image = UIImage(data:imageData)
+            cell?.imageView?.image = UIImage(data:imageData)
         }else{
             println("No Profile Picture")
         }
