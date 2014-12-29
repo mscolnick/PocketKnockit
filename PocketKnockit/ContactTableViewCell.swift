@@ -34,9 +34,23 @@ class ContactTableViewCell: UITableViewCell {
         super.init(coder: decoder)
     }
     
-    func textFieldShouldReturn(aTextField: UITextField) -> Bool {
-        self.numberField.resignFirstResponder()
+
+    /**
+    * Called when 'return' key pressed. return NO to ignore.
+    */
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         return true
+    }
+    
+    /**
+    * Called when the user click on the view (outside the UITextField).
+    */
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        var def:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        def.setInteger(self.numberField.text.toInt()!, forKey: self.idForCell)
+        def.synchronize()
+        self.superview!.endEditing(true)
     }
     
     @IBAction func editingChanged(sender: AnyObject) {

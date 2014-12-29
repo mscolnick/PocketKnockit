@@ -40,11 +40,18 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         if let profileUrlString: NSString = obj["profilePictureURL"] as? NSString{
             var url:NSURL = NSURL(string: profileUrlString)!
             var imageData:NSData = NSData(contentsOfURL: url)!
+            let size = cell?.frame.size.height
+            println(size)
+            cell?.imageView.layer.cornerRadius = 33
+            cell?.imageView.layer.borderWidth = 1.0
+            cell?.imageView.layer.borderColor = UIColor.blackColor().CGColor
+            cell?.imageView.clipsToBounds = true
+            cell?.imageView.layer.masksToBounds = true
             cell?.imageView.image = UIImage(data:imageData)
         }else{
             println("No Profile Picture")
         }
-        
+
         
         var def:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         var defaultValue = 3;
