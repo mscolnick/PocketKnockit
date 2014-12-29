@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import AudioToolbox
 import CoreMotion
 
 let DATA_SIZE = 5
@@ -64,9 +65,8 @@ class HomeViewController: UIViewController {
         var sessionError:NSErrorPointer = nil
         AVAudioSession.sharedInstance().setActive(true, error: nil)
         AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord, error: sessionError)
-        //FIXME :
-//        AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker, error: sessionError)
-//        self.playSound()
+        AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker, error: sessionError)
+        self.playSound()
         
         println("Home Screen Loaded")
     }
@@ -78,9 +78,13 @@ class HomeViewController: UIViewController {
     
     
     func playSound(){
-        var player = AVAudioPlayer(contentsOfURL: NSBundle().URLForResource("blank", withExtension: "mp3"), error: nil)
-        player.numberOfLoops = -1;
-        player.play()
+        let player = AVAudioPlayer(contentsOfURL: NSBundle().URLForResource("blank", withExtension: "mp3"), error: nil)
+        if(player != nil){
+            player.numberOfLoops = -1;
+            player.play()
+        }else{
+            println("Error: No Sound")
+        }
     }
 
     
@@ -226,7 +230,7 @@ class HomeViewController: UIViewController {
 
     
     func vibratePhone(){
-        //FIX ME: AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
     
