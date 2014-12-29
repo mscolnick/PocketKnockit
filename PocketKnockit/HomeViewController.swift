@@ -24,7 +24,8 @@ class HomeViewController: UIViewController {
     var avPlayer = AVAudioPlayer() //for audio stuff
     var zvals:NSMutableArray = NSMutableArray()
     var motionManager:CMMotionManager = CMMotionManager()
-    
+    var sleepPreventer:MMPDeepSleepPreventer = MMPDeepSleepPreventer()
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,11 +64,11 @@ class HomeViewController: UIViewController {
 
         // Set AVAudioSession
         var sessionError:NSErrorPointer = nil
-        AVAudioSession.sharedInstance().setActive(true, error: nil)
-        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord, error: sessionError)
-        AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker, error: sessionError)
-        self.playSound()
-        
+//        AVAudioSession.sharedInstance().setActive(true, error: nil)
+//        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord, error: sessionError)
+//        AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker, error: sessionError)
+//        self.playSound()
+        sleepPreventer.startPreventSleep();
         println("Home Screen Loaded")
     }
     

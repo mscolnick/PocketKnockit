@@ -10,6 +10,8 @@
 		6F26E9501A5119A300B9EEB9 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F26E94F1A5119A300B9EEB9 /* FacebookSDK.framework */; };
 		6F26E9521A511A1700B9EEB9 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F26E9511A511A1700B9EEB9 /* ParseFacebookUtils.framework */; };
 		6F26E9541A511A2E00B9EEB9 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F26E9531A511A2E00B9EEB9 /* Parse.framework */; };
+		6F75B6551A520A0C005365C0 /* MMPDeepSleepPreventer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F75B6541A520A0C005365C0 /* MMPDeepSleepPreventer.m */; };
+		6F75B6571A520A3D005365C0 /* blank.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6F75B6561A520A3D005365C0 /* blank.mp3 */; };
 		6FD374C31A4FDF8C00D6BC50 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD374C21A4FDF8C00D6BC50 /* LoginViewController.swift */; };
 		F352DB681A4F9C8000F70099 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F352DB671A4F9C8000F70099 /* MoreTableViewController.swift */; };
 		F39CB0A91A4A430B00DB7F4A /* RecentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39CB0A81A4A430B00DB7F4A /* RecentsViewController.swift */; };
@@ -52,6 +54,9 @@
 		6F26E94F1A5119A300B9EEB9 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		6F26E9511A511A1700B9EEB9 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "parse-library-1.6.1/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
 		6F26E9531A511A2E00B9EEB9 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.6.1/Parse.framework"; sourceTree = "<group>"; };
+		6F75B6531A520A0C005365C0 /* MMPDeepSleepPreventer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPDeepSleepPreventer.h; sourceTree = "<group>"; };
+		6F75B6541A520A0C005365C0 /* MMPDeepSleepPreventer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPDeepSleepPreventer.m; sourceTree = "<group>"; };
+		6F75B6561A520A3D005365C0 /* blank.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = blank.mp3; sourceTree = SOURCE_ROOT; };
 		6FD374C21A4FDF8C00D6BC50 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F352DB671A4F9C8000F70099 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		F39CB0A81A4A430B00DB7F4A /* RecentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentsViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +126,8 @@
 		F3B62C901A48F2030029E303 = {
 			isa = PBXGroup;
 			children = (
+				6F75B6531A520A0C005365C0 /* MMPDeepSleepPreventer.h */,
+				6F75B6541A520A0C005365C0 /* MMPDeepSleepPreventer.m */,
 				6F26E9531A511A2E00B9EEB9 /* Parse.framework */,
 				6F26E94F1A5119A300B9EEB9 /* FacebookSDK.framework */,
 				F39CB0C41A4A917D00DB7F4A /* Bolts.framework */,
@@ -168,6 +175,7 @@
 				F3B62CC81A494E810029E303 /* ContactTableViewCell.swift */,
 				F3B62CA71A48F2040029E303 /* Images.xcassets */,
 				F3B62CA91A48F2040029E303 /* LaunchScreen.xib */,
+				6F75B6561A520A3D005365C0 /* blank.mp3 */,
 				F3B62C9C1A48F2040029E303 /* Supporting Files */,
 			);
 			path = PocketKnockit;
@@ -282,6 +290,7 @@
 				F3B62CA61A48F2040029E303 /* Main.storyboard in Resources */,
 				F3B62CAB1A48F2040029E303 /* LaunchScreen.xib in Resources */,
 				F3B62CA81A48F2040029E303 /* Images.xcassets in Resources */,
+				6F75B6571A520A3D005365C0 /* blank.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +318,7 @@
 				F39CB0A91A4A430B00DB7F4A /* RecentsViewController.swift in Sources */,
 				F3B62CC11A48F2B40029E303 /* HomeViewController.swift in Sources */,
 				F3B62CC71A49495C0029E303 /* ContactsViewController.swift in Sources */,
+				6F75B6551A520A0C005365C0 /* MMPDeepSleepPreventer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
