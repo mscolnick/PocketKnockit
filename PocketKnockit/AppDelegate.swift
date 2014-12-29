@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,8 +21,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Parse.setApplicationId("HlUyWP8XIpZXuiA78zmJNjv4bBRyeWCMccKQzU1e", clientKey: "UB4sqUzJB4BvP2GNb4brpWd3VP9ahv9NPZfSxW7k")
-       PFFacebookUtils.initializeFacebook()
-        //TODO - Refactor: [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+        PFFacebookUtils.initializeFacebook()
+        PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
+        
+        // Register for Push Notitications, if running iOS 8
+        var userNotificationTypes: UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
+        var settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
+        
+        //FIXME: Throwing errors 
+        /*
+        var sessionError:NSErrorPointer?
+        var activationError:NSErrorPointer?
+
+        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: sessionError!)
+        AVAudioSession.sharedInstance().setActive(true, error: sessionError!)*/
         
         
         // Override point for customization after application launch.
@@ -35,6 +51,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        self.bgTask = application.beginBackgroundTaskWithName("MyTask", expirationHandler: { () -> Void in
+            // Clean up any unfinished task business by marking where you
+            // stopped or ending the task outright.
+            application.endBackgroundTask(self.bgTask!)
+            self.bgTask = UIBackgroundTaskInvalid
+        })
+        
+        // Start the long-running task and return immediately.
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
+            // Do the work associated with the task, preferably in chunks.
+            while(true){}
+            application.endBackgroundTask(self.bgTask!)
+            self.bgTask = UIBackgroundTaskInvalid
+        })
+
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -44,39 +76,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         FBAppCall.handleDidBecomeActiveWithSession(PFFacebookUtils.session())
-        /////
 
     }
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        PFFacebookUtils.session().close()
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        // Store the deviceToken in the current installation and save it to Parse.
         var currentInstallation: PFInstallation = PFInstallation.currentInstallation()
         currentInstallation.setDeviceTokenFromData(deviceToken)
         if(PFUser.currentUser() != nil){
             currentInstallation.setObject(PFUser.currentUser().objectId, forKey: "owner")
         }
         currentInstallation.channels = ["global"]
-        //FIXME: not saveInBackground()
-        currentInstallation.save()
+        currentInstallation.saveInBackgroundWithBlock(nil)
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         PFPush.handlePush(userInfo)
     }
     
-    func application(application: UIApplication,
-        openURL url: NSURL,
-        sourceApplication: String,
-        annotation: AnyObject?) -> Bool {
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String, annotation: AnyObject?) -> Bool {
             return FBAppCall.handleOpenURL(url, sourceApplication:sourceApplication,
                 withSession:PFFacebookUtils.session())
-            /////////
     }
-    
-    
-
 }
 

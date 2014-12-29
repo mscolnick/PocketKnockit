@@ -12,7 +12,6 @@ class MoreViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var tableView: UITableView!
     
-    //TODO: Make this PList
     var items:NSDictionary = [
         "Spread The Word": ["Share", "Rate PocketKnockit", "Like us on Facebook", "Follow us on Twitter", "Follow us on Instagram"],
         "Settings": ["View Graph", "Vibrate Feedback", "Enable PocketKnockit", "Logout of Facebook"],
@@ -82,7 +81,7 @@ class MoreViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Configure the cell...
         var sectionItems:NSArray = self.items.objectForKey(self.sectionTitles.objectAtIndex(indexPath.section)) as NSArray
         var item:NSString = sectionItems.objectAtIndex(indexPath.row) as NSString
-        cell?.textLabel?.text = item
+        cell?.textLabel.text = item
         cell?.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell!

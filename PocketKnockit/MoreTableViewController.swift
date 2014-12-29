@@ -17,6 +17,10 @@ class MoreTableViewController: UITableViewController {
     
     @IBOutlet weak var enablePocketKnockitLabel: UILabel!
     @IBOutlet weak var vibrationFeedbackLabel: UILabel!
+
+    
+    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var profileName: UILabel!
     
     var links:[String:String] = [
         "Rate": "https://itunes.com",
@@ -38,6 +42,19 @@ class MoreTableViewController: UITableViewController {
         }else{
             self.enablePocketKnockitLabel.text = "Off"
         }
+        
+        if let profileUrlString: NSString = PFUser.currentUser()["profilePictureUrl"] as? NSString{
+            var url:NSURL = NSURL(string: profileUrlString)!
+            var imageData:NSData = NSData(contentsOfURL: url)!
+            profilePicture.image = UIImage(data:imageData)
+        }else{
+            println("No Profile Picture")
+        }
+        
+        if let profileDisplayName: NSString = PFUser.currentUser()["displayName"] as? NSString{
+            self.profileName.text = profileDisplayName
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {

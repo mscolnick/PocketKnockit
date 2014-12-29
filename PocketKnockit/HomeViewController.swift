@@ -28,7 +28,6 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        println("Hello World")
         var userDefaults = NSUserDefaults()
 
         if(userDefaults.objectForKey("message") == nil){
@@ -69,8 +68,7 @@ class HomeViewController: UIViewController {
 //        AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.Speaker, error: sessionError)
 //        self.playSound()
         
-        
-        println("Finished View Did Load")
+        println("Home Screen Loaded")
     }
     
     override func didReceiveMemoryWarning() {
@@ -209,8 +207,7 @@ class HomeViewController: UIViewController {
         var NSUD:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         var message:NSString = String(format:"%@-%@", NSUD.objectForKey("message") as NSString, PFUser.currentUser()["displayName"] as NSString)
         push.setMessage(message)
-        //TODO
-//        push.sendPushInBackground()
+        push.sendPushInBackgroundWithBlock(nil)
         
         var recentKnock:PFObject = PFObject(className: "History")
 
@@ -223,8 +220,7 @@ class HomeViewController: UIViewController {
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
         dateFormatter.dateFormat = "MMM d, K:mm a"
         recentKnock["sentTIme"] = dateFormatter.stringFromDate(currentTime)
-        //TODO
-//        recentKnock.saveInBackground()
+        recentKnock.saveInBackgroundWithBlock(nil)
         
     }
 

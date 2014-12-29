@@ -10,12 +10,13 @@ import UIKit
 
 class ContactsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var freindsArray:NSMutableArray = []
+    var friendsArray:NSMutableArray = []
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.queryFacebookFriends()
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,12 +36,12 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         //CHECK HERE IF PROBLEM
         
-        var obj:PFObject = self.freindsArray.objectAtIndex(indexPath.row) as PFObject
+        var obj:PFObject = self.friendsArray.objectAtIndex(indexPath.row) as PFObject
         var cellText:NSString = obj["displayName"] as NSString
-        cell?.textLabel?.text = cellText
+        cell?.textLabel.text = cellText
         var pictureUrl:NSString = obj["profilePictureURL"] as NSString
         var img:UIImage = UIImage(data: NSData(contentsOfURL: NSURL(fileURLWithPath: pictureUrl)!)!)!
-        cell?.imageView?.image = img
+        cell?.imageView.image = img
         var def:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         var defaultValue = 3;
         if(def.objectForKey(obj.objectId) == nil){
@@ -54,12 +55,11 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         //if it does not, set it to default value
         //set the field
         
-        
         return cell!;
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.freindsArray.count
+        return self.friendsArray.count
     }
     
     func refreshTable(){
@@ -67,24 +67,51 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func queryFacebookFriends(){
-        //TODO: refactor below code
+        //CHECK IF WORKS BEFORE DELETING:
+        /*
+            [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                if (!error) {
+                    NSArray *friendObjects = [result objectForKey:@"data"];
+                    NSMutableArray *friendIds = [NSMutableArray arrayWithCapacity:friendObjects.count];
+                    for (NSDictionary *friendObject in friendObjects) {
+                        [friendIds addObject:[friendObject objectForKey:@"id"]];
+                    }
+                    PFQuery *friendQuery = [PFUser query];
+                    [friendQuery whereKey:@"facebookId" containedIn:friendIds];
         
-        //    [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-        //        if (!error) {
-        //            NSArray *friendObjects = [result objectForKey:@"data"];
-        //            NSMutableArray *friendIds = [NSMutableArray arrayWithCapacity:friendObjects.count];
-        //            for (NSDictionary *friendObject in friendObjects) {
-        //                [friendIds addObject:[friendObject objectForKey:@"id"]];
-        //            }
-        //            PFQuery *friendQuery = [PFUser query];
-        //            [friendQuery whereKey:@"facebookId" containedIn:friendIds];
-        //
-        //            [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        //                self.friendArray = [objects mutableCopy];
-        //                [self refreshTable];
-        //            }];
-        //        }
-        //    }];
+                    [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                        self.friendArray = [objects mutableCopy];
+                        [self refreshTable];
+                    }];
+                }
+            }];
+        */
+        FBRequestConnection.startForMyFriendsWithCompletionHandler { (connection: FBRequestConnection!, result: AnyObject!, error: NSError!) -> Void in
+            if error == nil {
+                println(result)
+                var friendObjects:NSArray = result["data"] as [NSDictionary]
+                println(friendObjects)
+                var friendIds:NSMutableArray = NSMutableArray(capacity: friendObjects.count)
+                for friendObject in friendObjects {
+                    friendIds.addObject(friendObject["id"] as NSString)
+                }
+                println(friendIds)
+                var friendQuery: PFQuery = PFUser.query()
+                friendQuery.whereKey("facebookId", containedIn: friendIds)
+                friendQuery.findObjectsInBackgroundWithBlock({ (NSArray objects, NSError error) -> Void in
+                    println(error)
+                    println(objects)
+                    self.friendsArray = (objects as NSArray).mutableCopy() as NSMutableArray
+                    println(self.friendsArray)
+                    self.refreshTable()
+                })
+                println("Recived Friends")
+            } else {
+                println("Error requesting friends list form facebook")
+                println("\(error)")
+            }
+        }
+        
     }
     
 }

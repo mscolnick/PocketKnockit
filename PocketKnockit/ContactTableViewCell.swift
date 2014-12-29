@@ -43,7 +43,5 @@ class ContactTableViewCell: UITableViewCell {
         var def:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         def.setInteger(self.numberField.text.toInt()!, forKey: self.idForCell)
         def.synchronize()
-    }    
-        // Configure the view for the selected state
-    
+    }        
 }

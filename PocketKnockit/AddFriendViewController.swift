@@ -49,7 +49,7 @@ class AddFriendViewController: UIViewController, UITableViewDataSource, UITableV
             }
             
             // Configure the cell
-            cell.textLabel?.text = person
+            cell.textLabel.text = person
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
             
             return cell
