@@ -26,7 +26,7 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        tableView.tableFooterView = UIView(frame: CGRectZero)
+//        tableView.tableFooterView = UIView(frame: CGRectZero)
         var CellIdentifier:NSString = "ContactCell"
         var cell:ContactTableViewCell? = self.tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as? ContactTableViewCell
         
@@ -34,21 +34,25 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
             cell = ContactTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: CellIdentifier)
         }
         
-        //CHECK HERE IF PROBLEM
-        
         var obj:PFObject = self.friendsArray.objectAtIndex(indexPath.row) as PFObject
         var cellText:NSString = obj["displayName"] as NSString
         cell?.textLabel.text = cellText
-        var pictureUrl:NSString = obj["profilePictureURL"] as NSString
-        var img:UIImage = UIImage(data: NSData(contentsOfURL: NSURL(fileURLWithPath: pictureUrl)!)!)!
-        cell?.imageView.image = img
+        if let profileUrlString: NSString = obj["profilePictureURL"] as? NSString{
+            var url:NSURL = NSURL(string: profileUrlString)!
+            var imageData:NSData = NSData(contentsOfURL: url)!
+            cell?.imageView.image = UIImage(data:imageData)
+        }else{
+            println("No Profile Picture")
+        }
+        
+        
         var def:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         var defaultValue = 3;
         if(def.objectForKey(obj.objectId) == nil){
             def.setInteger(defaultValue, forKey: obj.objectId)
             def.synchronize()
         }
-        
+
         cell?.numberField.text = "\(def.integerForKey(obj.objectId))"
         cell?.idForCell = obj.objectId
         //check to see if an entry exists in NSUser defualts
