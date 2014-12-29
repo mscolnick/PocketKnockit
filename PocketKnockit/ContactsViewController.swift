@@ -37,10 +37,10 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         var obj:PFObject = self.freindsArray.objectAtIndex(indexPath.row) as PFObject
         var cellText:NSString = obj["displayName"] as NSString
-        cell?.textLabel.text = cellText
+        cell?.textLabel?.text = cellText
         var pictureUrl:NSString = obj["profilePictureURL"] as NSString
         var img:UIImage = UIImage(data: NSData(contentsOfURL: NSURL(fileURLWithPath: pictureUrl)!)!)!
-        cell?.imageView.image = img
+        cell?.imageView?.image = img
         var def:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         var defaultValue = 3;
         if(def.objectForKey(obj.objectId) == nil){
