@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="OZl-IN-aHK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="OZl-IN-aHK">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--Home-->
@@ -710,8 +710,8 @@
                                     <action selector="loginButtonHandler:" destination="OZl-IN-aHK" eventType="touchUpInside" id="hVI-IX-3Hg"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="door" id="ukL-eb-UP4">
-                                <rect key="frame" x="85" y="71" width="150" height="150"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="door2" id="ukL-eb-UP4">
+                                <rect key="frame" x="91" y="20" width="139" height="202"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -761,7 +761,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="door" width="64" height="64"/>
+        <image name="door2" width="529" height="804"/>
         <image name="dotdotdotTabBar" width="50" height="34"/>
         <image name="recentsTabBar" width="50" height="34"/>
         <image name="talkTabBar" width="50" height="34"/>
