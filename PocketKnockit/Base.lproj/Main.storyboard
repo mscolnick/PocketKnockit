@@ -496,7 +496,7 @@
                                     <navigationItem id="pk4-2X-BZ2">
                                         <nil key="title"/>
                                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="4V5-Qx-FXz">
-                                            <rect key="frame" x="89.5" y="7.5" width="141" height="29"/>
+                                            <rect key="frame" x="90" y="8" width="141" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="Received"/>

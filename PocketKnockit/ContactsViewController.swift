@@ -15,15 +15,21 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapRec = UITapGestureRecognizer()
+        tapRec.addTarget(self, action:"endEditing")
+
+        self.view.addGestureRecognizer(tapRec)
         // Do any additional setup after loading the view, typically from a nib.
         self.queryFacebookFriends()
+        //self.queryFriends()
     }
-    
+    func endEditing () {
+        self.view.endEditing(true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 //        tableView.tableFooterView = UIView(frame: CGRectZero)
@@ -77,6 +83,16 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         self.tableView.reloadData()
     }
     
+    //use queryFriends to query only in app friends
+    func queryFriends(){
+        var friendQuery: PFQuery = PFUser.query()
+        var friendIds:NSArray = PFUser.currentUser().valueForKey("friends") as NSArray //as [NSDictionary]
+        friendQuery.whereKey("objectId", containedIn: friendIds)
+        friendQuery.findObjectsInBackgroundWithBlock({ (NSArray objects, NSError error) -> Void in
+            self.friendsArray = (objects as NSArray).mutableCopy() as NSMutableArray
+            self.refreshTable()
+        })
+    }
     func queryFacebookFriends(){
         //CHECK IF WORKS BEFORE DELETING:
         /*
