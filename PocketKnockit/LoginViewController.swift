@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
             //if we are already logged in at application open
             if(PFFacebookUtils.isLinkedWithUser(user)){
                 PFFacebookUtils.initializeFacebook()
-//                self.performSegueWithIdentifier("Login", sender: nil)
+                self.performSegueWithIdentifier("Login", sender: nil)
             }
         }
         PFFacebookUtils.initializeFacebook()

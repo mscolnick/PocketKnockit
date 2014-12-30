@@ -681,7 +681,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxM-I8-Uwy">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxM-I8-Uwy">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <color key="barTintColor" red="0.25490197539999998" green="0.79215687509999999" blue="0.96470588450000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
@@ -699,14 +699,14 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bms-jz-VDv">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bms-jz-VDv">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="jlW-sf-r5v" id="gXb-7N-Dcd"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="I2I-Ee-zWd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="I2I-Ee-zWd">
                                 <rect key="frame" x="0.0" y="108" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -734,6 +734,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.25490197539999998" green="0.79215687509999999" blue="0.96470588450000005" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="bms-jz-VDv" firstAttribute="top" secondItem="RxM-I8-Uwy" secondAttribute="bottom" id="1qF-Y3-zVC"/>
+                            <constraint firstItem="I2I-Ee-zWd" firstAttribute="leading" secondItem="bms-jz-VDv" secondAttribute="leading" id="4K3-o5-KRY"/>
+                            <constraint firstItem="RxM-I8-Uwy" firstAttribute="top" secondItem="vm0-08-7lP" secondAttribute="bottom" id="HSB-ia-1Bf"/>
+                            <constraint firstItem="I2I-Ee-zWd" firstAttribute="trailing" secondItem="bms-jz-VDv" secondAttribute="trailing" id="Th3-ml-uhE"/>
+                            <constraint firstItem="I2I-Ee-zWd" firstAttribute="top" secondItem="bms-jz-VDv" secondAttribute="bottom" id="Tzv-v8-xhN"/>
+                            <constraint firstItem="bms-jz-VDv" firstAttribute="leading" secondItem="RxM-I8-Uwy" secondAttribute="leading" id="cQP-d6-HAS"/>
+                            <constraint firstAttribute="trailing" secondItem="bms-jz-VDv" secondAttribute="trailing" id="mNy-A2-Iyu"/>
+                            <constraint firstItem="RxM-I8-Uwy" firstAttribute="trailing" secondItem="bms-jz-VDv" secondAttribute="trailing" id="sdP-EH-5xT"/>
+                            <constraint firstItem="I2I-Ee-zWd" firstAttribute="bottom" secondItem="Ifb-gN-Qb3" secondAttribute="top" id="tlb-HE-aso"/>
+                            <constraint firstItem="bms-jz-VDv" firstAttribute="leading" secondItem="b71-Ac-dUm" secondAttribute="leading" id="tmO-rb-4hw"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="addFriendTableView" destination="I2I-Ee-zWd" id="Mc4-tE-6Dm"/>
