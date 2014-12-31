@@ -90,6 +90,13 @@ class MoreTableViewController: UITableViewController {
             self.presentViewController(activityViewController, animated: true, completion: nil)
         }
         
+        if(identifier == "Logout"){
+            FBSession.activeSession().closeAndClearTokenInformation()
+        }
+        if(identifier == "Policy"){
+            println("Policy")
+        }
+        
         
         // so cell wont stay highlighted
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

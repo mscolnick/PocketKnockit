@@ -15,7 +15,6 @@
 		6FD374C31A4FDF8C00D6BC50 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD374C21A4FDF8C00D6BC50 /* LoginViewController.swift */; };
 		F352DB681A4F9C8000F70099 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F352DB671A4F9C8000F70099 /* MoreTableViewController.swift */; };
 		F39CB0A91A4A430B00DB7F4A /* RecentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39CB0A81A4A430B00DB7F4A /* RecentsViewController.swift */; };
-		F39CB0AB1A4A732500DB7F4A /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39CB0AA1A4A732500DB7F4A /* MoreViewController.swift */; };
 		F39CB0AD1A4A846900DB7F4A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39CB0AC1A4A846900DB7F4A /* AudioToolbox.framework */; };
 		F39CB0AF1A4A846D00DB7F4A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39CB0AE1A4A846D00DB7F4A /* CFNetwork.framework */; };
 		F39CB0B11A4A847400DB7F4A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39CB0B01A4A847400DB7F4A /* CoreGraphics.framework */; };
@@ -60,7 +59,6 @@
 		6FD374C21A4FDF8C00D6BC50 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F352DB671A4F9C8000F70099 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		F39CB0A81A4A430B00DB7F4A /* RecentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentsViewController.swift; sourceTree = "<group>"; };
-		F39CB0AA1A4A732500DB7F4A /* MoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		F39CB0AC1A4A846900DB7F4A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F39CB0AE1A4A846D00DB7F4A /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F39CB0B01A4A847400DB7F4A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -168,7 +166,6 @@
 				F3B62CC01A48F2B40029E303 /* HomeViewController.swift */,
 				6FD374C21A4FDF8C00D6BC50 /* LoginViewController.swift */,
 				F3EABAFA1A4BCE7400BCB5A5 /* AddFriendViewController.swift */,
-				F39CB0AA1A4A732500DB7F4A /* MoreViewController.swift */,
 				F352DB671A4F9C8000F70099 /* MoreTableViewController.swift */,
 				F3B62CC61A49495C0029E303 /* ContactsViewController.swift */,
 				F39CB0A81A4A430B00DB7F4A /* RecentsViewController.swift */,
@@ -311,7 +308,6 @@
 				6FD374C31A4FDF8C00D6BC50 /* LoginViewController.swift in Sources */,
 				F3EABAFB1A4BCE7400BCB5A5 /* AddFriendViewController.swift in Sources */,
 				F352DB681A4F9C8000F70099 /* MoreTableViewController.swift in Sources */,
-				F39CB0AB1A4A732500DB7F4A /* MoreViewController.swift in Sources */,
 				F3B62CC91A494E810029E303 /* ContactTableViewCell.swift in Sources */,
 				F3B62C9F1A48F2040029E303 /* AppDelegate.swift in Sources */,
 				F3B62CA11A48F2040029E303 /* FirstViewController.swift in Sources */,

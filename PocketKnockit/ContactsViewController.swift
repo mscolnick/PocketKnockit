@@ -32,28 +32,23 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        tableView.tableFooterView = UIView(frame: CGRectZero)
         var CellIdentifier:NSString = "ContactCell"
-        var cell:ContactTableViewCell? = self.tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as? ContactTableViewCell
-        
-        if (cell == nil) {
-            cell = ContactTableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: CellIdentifier)
-        }
+        var cell:ContactTableViewCell = self.tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as ContactTableViewCell
         
         var obj:PFObject = self.friendsArray.objectAtIndex(indexPath.row) as PFObject
         var cellText:NSString = obj["displayName"] as NSString
-        cell?.textLabel?.text = cellText
+        cell.textLabel.text = cellText
         if let profileUrlString: NSString = obj["profilePictureURL"] as? NSString{
             var url:NSURL = NSURL(string: profileUrlString)!
             var imageData:NSData = NSData(contentsOfURL: url)!
-            let size = cell?.frame.size.height
+            let size = cell.frame.size.height
             println(size)
-            cell?.imageView?.layer.cornerRadius = 33
-            cell?.imageView?.layer.borderWidth = 1.0
-            cell?.imageView?.layer.borderColor = UIColor.blackColor().CGColor
-            cell?.imageView?.clipsToBounds = true
-            cell?.imageView?.layer.masksToBounds = true
-            cell?.imageView?.image = UIImage(data:imageData)
+            cell.imageView.layer.cornerRadius = 33
+            cell.imageView.layer.borderWidth = 1.0
+            cell.imageView.layer.borderColor = UIColor.blackColor().CGColor
+            cell.imageView.clipsToBounds = true
+            cell.imageView.layer.masksToBounds = true
+            cell.imageView.image = UIImage(data:imageData)
         }else{
             println("No Profile Picture")
         }
@@ -66,13 +61,13 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
             def.synchronize()
         }
 
-        cell?.numberField.text = "\(def.integerForKey(obj.objectId))"
-        cell?.idForCell = obj.objectId
+        cell.numberField.text = "\(def.integerForKey(obj.objectId))"
+        cell.idForCell = obj.objectId
         //check to see if an entry exists in NSUser defualts
         //if it does not, set it to default value
         //set the field
         
-        return cell!;
+        return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,25 +89,6 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
         })
     }
     func queryFacebookFriends(){
-        //CHECK IF WORKS BEFORE DELETING:
-        /*
-            [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                if (!error) {
-                    NSArray *friendObjects = [result objectForKey:@"data"];
-                    NSMutableArray *friendIds = [NSMutableArray arrayWithCapacity:friendObjects.count];
-                    for (NSDictionary *friendObject in friendObjects) {
-                        [friendIds addObject:[friendObject objectForKey:@"id"]];
-                    }
-                    PFQuery *friendQuery = [PFUser query];
-                    [friendQuery whereKey:@"facebookId" containedIn:friendIds];
-        
-                    [friendQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                        self.friendArray = [objects mutableCopy];
-                        [self refreshTable];
-                    }];
-                }
-            }];
-        */
         FBRequestConnection.startForMyFriendsWithCompletionHandler { (connection: FBRequestConnection!, result: AnyObject!, error: NSError!) -> Void in
             if error == nil {
                 println(result)
@@ -138,7 +114,6 @@ class ContactsViewController: UIViewController, UITableViewDataSource, UITableVi
                 println("\(error)")
             }
         }
-        
     }
     
 }

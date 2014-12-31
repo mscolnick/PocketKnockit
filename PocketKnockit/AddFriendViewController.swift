@@ -49,7 +49,7 @@ class AddFriendViewController: UIViewController, UITableViewDataSource, UITableV
             }
             
             // Configure the cell
-            cell.textLabel?.text = person
+            cell.textLabel.text = person
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
             
             return cell
@@ -58,13 +58,9 @@ class AddFriendViewController: UIViewController, UITableViewDataSource, UITableV
         
         tableView.tableFooterView = UIView(frame: CGRectZero)
         var CellIdentifier:NSString = "AddFriendCell"
-        var cell:UITableViewCell? = self.addFriendTableView.dequeueReusableCellWithIdentifier(CellIdentifier) as? UITableViewCell
+        var cell:UITableViewCell = self.addFriendTableView.dequeueReusableCellWithIdentifier(CellIdentifier) as UITableViewCell
         
-        if (cell == nil) {
-            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: CellIdentifier)
-        }
-        
-        return cell!
+        return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

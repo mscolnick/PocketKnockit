@@ -34,12 +34,8 @@ class RecentsViewController: UIViewController, UITableViewDataSource, UITableVie
         tableView.tableFooterView = UIView(frame: CGRectZero)
         // IF ERROR CHECK HERE
         var CellIdentifier:NSString = "NotificationCell"
-        var cell:UITableViewCell? = self.tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as? UITableViewCell
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as UITableViewCell
 
-        if (cell == nil) {
-            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: CellIdentifier)
-        }
-        
         var obj:PFObject?
         if (self.segControl.selectedSegmentIndex == 0){
             var count: NSInteger = self.recievedNotificationArray.count
@@ -50,11 +46,11 @@ class RecentsViewController: UIViewController, UITableViewDataSource, UITableVie
         }
 
         var cellText:NSString = obj?["message"] as NSString
-        cell?.textLabel?.text = cellText
-        var date:NSString = obj?["message"] as NSString
-        cell?.detailTextLabel?.text = date
+        cell.textLabel.text = cellText
+        var date:NSString = obj?["date"] as NSString
+        cell.detailTextLabel?.text = date
         
-        return cell!
+        return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

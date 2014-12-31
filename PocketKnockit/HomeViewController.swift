@@ -25,7 +25,6 @@ class HomeViewController: UIViewController {
     var zvals:NSMutableArray = NSMutableArray()
     var motionManager:CMMotionManager = CMMotionManager()
     var sleepPreventer:MMPDeepSleepPreventer = MMPDeepSleepPreventer()
-        
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -154,15 +153,6 @@ class HomeViewController: UIViewController {
                     }
                 }
                 if(UIApplication.sharedApplication().applicationState == UIApplicationState.Active){
-                    //DEPRICATED
-                    /*
-                    var alert:UIAlertView = UIAlertView(
-                        title: "You sent a knock!",
-                        message: "You knocked \(self.knockCounter) time",
-                        delegate: self,
-                        cancelButtonTitle: "OK",
-                        otherButtonTitles: nil)
-                    alert.show()*/
                     var alert = UIAlertController(title: "You sent a knock!", message: "You knocked \(self.knockCounter) time", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
