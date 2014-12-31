@@ -46,7 +46,7 @@ class RecentsViewController: UIViewController, UITableViewDataSource, UITableVie
         }
 
         var cellText:NSString = obj?["message"] as NSString
-        cell.textLabel.text = cellText
+        cell.textLabel?.text = cellText
         var date:NSString = obj?["date"] as NSString
         cell.detailTextLabel?.text = date
         
