@@ -17,6 +17,7 @@ let KNOCK_DETECT_SENSITIVITY:Float = 0.65
 
 class HomeViewController: UIViewController {
  
+    @IBOutlet weak var enableSwitch: UISwitch!
     @IBOutlet var defaultMessage: UITextField!
     var knockCounter = 0
     var varyingDelay = 1
@@ -244,5 +245,14 @@ class HomeViewController: UIViewController {
         def.synchronize()
         self.view.endEditing(true)
     }
+    
+    @IBAction func toggleEnableSwitch(sender: AnyObject) {
+        if(self.enableSwitch.on == true){
+            
+        }else{
+            
+        }
+    }
+    
     
 }

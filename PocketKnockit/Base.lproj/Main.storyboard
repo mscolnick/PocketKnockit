@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="OZl-IN-aHK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="OZl-IN-aHK">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -19,6 +19,21 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zs1-f2-BrP">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Knocking Enabled" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pf1-xH-gYc">
+                                        <rect key="frame" x="24" y="164" width="140" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5pc-qQ-lXh">
+                                        <rect key="frame" x="172" y="159" width="51" height="31"/>
+                                        <color key="onTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="toggleEnableSwitch:" destination="9pv-A4-QxB" eventType="valueChanged" id="DpK-c8-cWf"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
                                 <color key="backgroundColor" red="0.910890020718232" green="0.910890020718232" blue="0.910890020718232" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose your message to send to your friends" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwS-42-3gK">
@@ -62,6 +77,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="talkTabBar" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="defaultMessage" destination="rdN-Vz-CD2" id="b9I-9A-20v"/>
+                        <outlet property="enableSwitch" destination="5pc-qQ-lXh" id="Xer-gw-b3E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -177,7 +193,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iff-9r-Dnq" id="1Bg-dA-yEc">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Rate PcoketKnockit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RYl-1D-K4U">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Rate PocketKnockit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RYl-1D-K4U">
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -248,8 +264,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qmc-kH-lHz" id="Dsn-Ok-2Dm">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enable PockitKnockit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZs-DR-GzQ">
-                                                    <rect key="frame" x="16" y="12" width="164" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enable PocketKnockit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZs-DR-GzQ">
+                                                    <rect key="frame" x="16" y="12" width="169" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -412,7 +428,7 @@
                                     <navigationItem id="pk4-2X-BZ2">
                                         <nil key="title"/>
                                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="4V5-Qx-FXz">
-                                            <rect key="frame" x="90" y="8" width="141" height="29"/>
+                                            <rect key="frame" x="89.5" y="7.5" width="141" height="29"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
                                                 <segment title="Received"/>
@@ -696,7 +712,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PocketKnockit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jud-se-Kbf">
                                 <rect key="frame" x="16" y="291" width="288" height="109"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="109" id="kuw-qt-VHu"/>
+                                    <constraint firstAttribute="height" constant="109" id="otM-lz-2n2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -706,7 +722,7 @@
                                 <rect key="frame" x="45" y="408" width="231" height="56"/>
                                 <color key="backgroundColor" red="0.21960784310000001" green="0.32156862749999998" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="xNU-aI-4RH"/>
+                                    <constraint firstAttribute="height" constant="56" id="wno-8G-70Z"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Login with Facebook">
@@ -717,22 +733,34 @@
                                     <action selector="loginButtonHandler:" destination="OZl-IN-aHK" eventType="touchUpInside" id="hVI-IX-3Hg"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="door2" translatesAutoresizingMaskIntoConstraints="NO" id="ukL-eb-UP4">
-                                <rect key="frame" x="91" y="81" width="139" height="202"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will never post to your Facebook." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wIj-2Y-dzb">
+                                <rect key="frame" x="63" y="472" width="194" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="TIk-hC-pz3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphoneDoor" translatesAutoresizingMaskIntoConstraints="NO" id="ukL-eb-UP4">
+                                <rect key="frame" x="57" y="42" width="207" height="223"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.25490197539999998" green="0.79215687509999999" blue="0.96470588450000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ukL-eb-UP4" firstAttribute="top" secondItem="nKo-av-91q" secondAttribute="bottom" constant="61" id="5hj-5B-rJH"/>
-                            <constraint firstItem="ukL-eb-UP4" firstAttribute="leading" secondItem="MVX-MU-DmI" secondAttribute="leadingMargin" constant="75" id="7AQ-H8-WB4"/>
-                            <constraint firstItem="jud-se-Kbf" firstAttribute="top" secondItem="ukL-eb-UP4" secondAttribute="bottom" constant="8" symbolic="YES" id="Ndn-xD-MBP"/>
-                            <constraint firstItem="jud-se-Kbf" firstAttribute="leading" secondItem="MVX-MU-DmI" secondAttribute="leadingMargin" id="Oc5-LX-q8Q"/>
-                            <constraint firstItem="jud-se-Kbf" firstAttribute="centerX" secondItem="SHG-aQ-Opr" secondAttribute="centerX" id="UNV-VG-vKP"/>
-                            <constraint firstItem="yN8-BT-TQq" firstAttribute="top" secondItem="SHG-aQ-Opr" secondAttribute="bottom" constant="104" id="Wu3-Im-1Ab"/>
-                            <constraint firstItem="jud-se-Kbf" firstAttribute="centerX" secondItem="ukL-eb-UP4" secondAttribute="centerX" id="kI2-ph-x1k"/>
-                            <constraint firstItem="jud-se-Kbf" firstAttribute="trailing" secondItem="MVX-MU-DmI" secondAttribute="trailingMargin" id="kXc-uu-8b4"/>
-                            <constraint firstItem="SHG-aQ-Opr" firstAttribute="top" secondItem="jud-se-Kbf" secondAttribute="bottom" constant="8" symbolic="YES" id="twN-EF-fWX"/>
-                            <constraint firstItem="SHG-aQ-Opr" firstAttribute="leading" secondItem="MVX-MU-DmI" secondAttribute="leadingMargin" constant="29" id="wIO-Vf-Kys"/>
+                            <constraint firstItem="ukL-eb-UP4" firstAttribute="top" secondItem="nKo-av-91q" secondAttribute="bottom" constant="22" id="8er-x3-r1y"/>
+                            <constraint firstItem="jud-se-Kbf" firstAttribute="centerX" secondItem="SHG-aQ-Opr" secondAttribute="centerX" id="Hoa-3E-0NO"/>
+                            <constraint firstItem="wIj-2Y-dzb" firstAttribute="leading" secondItem="MVX-MU-DmI" secondAttribute="leadingMargin" constant="47" id="O4T-Au-1MU"/>
+                            <constraint firstItem="jud-se-Kbf" firstAttribute="top" secondItem="ukL-eb-UP4" secondAttribute="bottom" constant="26" id="P6n-R7-4KP"/>
+                            <constraint firstItem="wIj-2Y-dzb" firstAttribute="top" secondItem="SHG-aQ-Opr" secondAttribute="bottom" constant="8" symbolic="YES" id="T9j-xA-r6l"/>
+                            <constraint firstItem="ukL-eb-UP4" firstAttribute="leading" secondItem="MVX-MU-DmI" secondAttribute="leadingMargin" constant="41" id="VeA-MS-Yzi"/>
+                            <constraint firstItem="jud-se-Kbf" firstAttribute="trailing" secondItem="MVX-MU-DmI" secondAttribute="trailingMargin" id="WZF-Za-jby"/>
+                            <constraint firstItem="ukL-eb-UP4" firstAttribute="centerX" secondItem="jud-se-Kbf" secondAttribute="centerX" id="Y2N-9N-wdb"/>
+                            <constraint firstItem="SHG-aQ-Opr" firstAttribute="leading" secondItem="MVX-MU-DmI" secondAttribute="leadingMargin" constant="29" id="hxN-dd-psJ"/>
+                            <constraint firstItem="wIj-2Y-dzb" firstAttribute="centerX" secondItem="SHG-aQ-Opr" secondAttribute="centerX" id="igE-j2-XOh"/>
+                            <constraint firstItem="SHG-aQ-Opr" firstAttribute="top" secondItem="jud-se-Kbf" secondAttribute="bottom" constant="8" symbolic="YES" id="kcU-iG-gGZ"/>
+                            <constraint firstItem="jud-se-Kbf" firstAttribute="leading" secondItem="MVX-MU-DmI" secondAttribute="leadingMargin" id="r58-jr-blB"/>
+                            <constraint firstItem="yN8-BT-TQq" firstAttribute="top" secondItem="wIj-2Y-dzb" secondAttribute="bottom" constant="75" id="wcF-y3-ZjS"/>
                         </constraints>
                     </view>
                     <connections>
@@ -779,8 +807,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="door2" width="529" height="804"/>
         <image name="dotdotdotTabBar" width="50" height="34"/>
+        <image name="iphoneDoor" width="478" height="595"/>
         <image name="recentsTabBar" width="50" height="34"/>
         <image name="talkTabBar" width="50" height="34"/>
         <image name="user" width="256" height="173"/>
